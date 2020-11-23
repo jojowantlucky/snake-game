@@ -1,12 +1,14 @@
 let s;
 let scl = 20; 
 let food; 
+const score = document.getElementById("score");
 
 function setup() {
 	createCanvas(600, 600);
 	s = new Snake ();
 	frameRate(10);
 	pickLocation();
+	score.innerHTML= "Score: 0";		
 }
 
 function pickLocation() {

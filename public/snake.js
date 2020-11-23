@@ -5,11 +5,13 @@ function Snake() {
 	this.yspeed = 0; 
 	this.total = 0;
 	this.tail = [];
+	
 
 	this.eat = function(pos) {
 		let d = dist(this.x, this.y, pos.x, pos.y);
 		if (d < 1) {
 			this.total++;
+			score.innerHTML = `Score: ${this.total}`;
 			return true;
 		} else {
 			return false;
@@ -51,10 +53,9 @@ function Snake() {
 	this.show = function () { 
 		fill(255);
 		for (let i = 0; i < this.tail.length; i++) {
-			rect(this.tail[i].x, this.tail[i].y, scl, scl)
-		}
+			rect(this.tail[i].x, this.tail[i].y, scl, scl);
+		} 
 		fill(255);
 		rect(this.x, this.y, scl, scl);
 	}
-	
 }
